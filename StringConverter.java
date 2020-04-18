@@ -90,6 +90,24 @@ public class StringConverter
     // give string str, return str in shorthand
     public static String shorthand(String str)
     {
+        // replace "and" with "&"
+        str = str.replaceAll(" and ", " & ");
+        // replace "to" with "2"
+        str = str.replaceAll(" to ", " 2 ");
+        // replace "you" with "0" (temporary)
+        str = str.replaceAll(" you ", " 0 ");
+        // replace "for" with "4"
+        str = str.replaceAll(" for ", " 4 ");
+        // remove all unadded vowels
+        String vowels = "aeiouAEIOU";
+        // for each char in vowels, replace all instances of that char in str
+        for (int i = 0; i < vowels.length(); i++)
+        {
+            char vowel = vowels.charAt(i);
+            str = str.replaceAll(String.valueOf(vowel), "");
+        }
+        // replace "0" with "U"
+        str = str.replaceAll(" 0 ", " U ");
         return str;
     }
 }
