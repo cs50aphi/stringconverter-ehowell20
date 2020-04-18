@@ -45,6 +45,46 @@ public class StringConverter
     // given string str, returns str in pig latin
     public static String pigLatinate(String str)
     {
+        String vowel = "aeiou";
+        String check = str.toLowerCase();
+        int vowelIndex = 0;
+        int strIndex = 0;
+        boolean isVowel = false;
+        // check if str has vowels
+        // searchs for each char of str in vowel
+        for (int i = 0; i < str.length(); i++)
+        {
+            vowelIndex = vowel.indexOf(str.charAt(i));
+            // break loop if vowel found and mark vowel as true
+            if (vowelIndex != -1)
+            {
+                strIndex = i;
+                isVowel = true;
+                break;
+            }
+        }
+        // if str has no vowels
+        if (!isVowel)
+        {
+            // english word + "ay"
+            return str + "ay";
+        }
+        // if str begins with vowel
+        else if (strIndex == 0)
+        {
+            // english word + "yay"
+            return str + "yay";
+        }
+        // if str has vowel in it
+        else if (isVowel)
+        {
+            // end = vowel char to last char in str
+            String end = str.substring(strIndex, str.length());
+            // start = first char up to vowel char in str
+            String start = str.substring(0, strIndex);
+            // return end + start + "ay"
+            return end + start + "ay";
+        }
         return str;
     }
     // give string str, return str in shorthand
