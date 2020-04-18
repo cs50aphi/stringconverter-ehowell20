@@ -21,7 +21,7 @@ public class StringConverterDriver
         String[] checks = new String[5];
         checks[0] = "radar";
         checks[1] = "J";
-        checks[2] = "Eva: Can I see bees in a cave?";
+        checks[2] = "Marge, lets Norah see Sharon's telegram!";
         checks[3] = "Java is Java";
         checks[4] = "Are we not drawn onward, we few, drawn onward to new era?";
      
